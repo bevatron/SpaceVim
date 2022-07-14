@@ -149,7 +149,7 @@ endfunction
 function! SpaceVim#default#layers() abort
   call SpaceVim#logger#debug('init default layer list.')
   call SpaceVim#layers#load('autocomplete')
-  call SpaceVim#layers#load('checkers')
+  "call SpaceVim#layers#load('checkers')
   call SpaceVim#layers#load('format')
   call SpaceVim#layers#load('edit')
   call SpaceVim#layers#load('ui')

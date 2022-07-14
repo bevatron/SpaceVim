@@ -112,11 +112,7 @@ function! SpaceVim#layers#autocomplete#plugins() abort
           \ 'loadconf' : 1,
           \ 'merged' : 0,
           \ }])
-    call add(plugins, ['prabirshrestha/asyncomplete-buffer.vim', {
-          \ 'loadconf' : 1,
-          \ 'merged' : 0,
-          \ }])
-    call add(plugins, ['yami-beta/asyncomplete-omni.vim', {
+    call add(plugins, ['prabirshrestha/asyncomplete-lsp.vim', {
           \ 'loadconf' : 1,
           \ 'merged' : 0,
           \ }])
