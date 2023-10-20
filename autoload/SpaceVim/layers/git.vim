@@ -68,6 +68,8 @@ function! SpaceVim#layers#git#plugins() abort
     call add(plugins, [g:_spacevim_root_dir . 'bundle/vim-dispatch', { 'merged' : 0}])
   elseif s:git_plugin ==# 'gita'
     call add(plugins, ['lambdalisue/vim-gita', { 'on_cmd' : 'Gita'}])
+  elseif s:git_plugin ==# 'neogit'
+    call add(plugins, ['NeogitOrg/neogit',   { 'merged' : 0, 'loadconf' : 1}])
   else
     call add(plugins, [g:_spacevim_root_dir . 'bundle/git.vim', { 'merged' : 0}])
   endif
@@ -117,8 +119,10 @@ function! SpaceVim#layers#git#config() abort
     call SpaceVim#mapping#space#def('nnoremap', ['g', 'b'], 'Gita blame', 'view-git-blame', 1)
     call SpaceVim#mapping#space#def('nnoremap', ['g', 'V'], 'Gita log %', 'git-log-of-current-file', 1)
     call SpaceVim#mapping#space#def('nnoremap', ['g', 'v'], 'Gita log', 'git-log-of-current-repo', 1)
+  elseif s:git_plugin ==# 'neogit'
+    call SpaceVim#mapping#space#def('nnoremap', ['g', 's'], 'Neogit', 'git-status', 1)
   else
-    call SpaceVim#mapping#space#def('nnoremap', ['g', 's'], 'Git status', 'git-status', 1)
+    call SpaceVim#mapping#space#def('nnoremap', ['g', 's'], 'Git Status', 'git-status', 1)
     call SpaceVim#mapping#space#def('nnoremap', ['g', 'S'], 'Git add %', 'stage-current-file', 1)
     call SpaceVim#mapping#space#def('nnoremap', ['g', 'U'], 'Git reset %', 'unstage-current-file', 1)
     call SpaceVim#mapping#space#def('nnoremap', ['g', 'c'], 'Git commit', 'edit-git-commit', 1)
